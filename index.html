@@ -65,7 +65,7 @@ var Recipe = React.createClass({
         render: function() {
           return (
             <div>
-              Hello, world! I am a RecipeBook
+              Hello, world! I am {this.props.owner}'s Recipe Book
               <RecipeList />
               <RecipeForm />
             </div>
@@ -74,7 +74,7 @@ var Recipe = React.createClass({
       });
 
       React.renderComponent(
-      <RecipeBook />, document.getElementById("app-container")
+      <RecipeBook owner="Dylan"/>, document.getElementById("app-container")
       );
     </script>
   </body>
