@@ -14,31 +14,57 @@
     <div id="app-container"></div>
 
     <script type="text/jsx">
-var RecipeList = React.createClass({
-render: function() {
-  return (
-    <div>
-    RecipeList component text
-    </div>
-  );
-}
-  });
 
-var RecipeForm = React.createClass({
-render: function() {
-  return (
-    <div>
-      RecipeForm component text
-    </div>
-  );
-}
-  });
+var Recipe = React.createClass({
+  getInitialState: function() {
+    console.log(this.props)
+    return null;
+  },
+  render: function() {
+    return (
+      <div>
+        <h2>{ this.props.title }</h2>
+        <p>{ this.props.instructions }</p>
+      </div>
+    );
+  }
+});
+
+      var RecipeList = React.createClass({
+        render: function() {
+          return (
+            <div>
+              RecipeList component text
+
+              <Recipe
+                title="Stuffed Chard"
+                instructions="Stuff the chard..."
+                />
+
+              <Recipe
+                title="Eggplant and Polenta"
+                instructions="Put the eggplant in the oven..."
+                />
+
+            </div>
+          );
+        }
+      });
+
+      var RecipeForm = React.createClass({
+        render: function() {
+          return (
+            <div>
+              RecipeForm component text
+            </div>
+          );
+        }
+      });
 
       var RecipeBook = React.createClass({
         render: function() {
           return (
             <div>
-              <RecipeBookPhoto />
               Hello, world! I am a RecipeBook
               <RecipeList />
               <RecipeForm />
@@ -46,16 +72,6 @@ render: function() {
           );
         }
       });
-
-      var RecipeBookPhoto = React.createClass({
-        render: function() {
-          return (
-            <div>
-              <img src="https://s-media-cache-ak0.pinimg.com/originals/74/b9/55/74b955513795417b28ec3e1a36c7ae0a.jpg" alt="recipe book photo" />
-            </div>
-          );
-        }
-        });
 
       React.renderComponent(
       <RecipeBook />, document.getElementById("app-container")
