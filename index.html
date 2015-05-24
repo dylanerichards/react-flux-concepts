@@ -1,0 +1,65 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+
+    </style>
+
+    <script src="http://fb.me/react-0.12.2.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+  </head>
+
+
+  <body>
+    <div id="app-container"></div>
+
+    <script type="text/jsx">
+var RecipeList = React.createClass({
+render: function() {
+  return (
+    <div>
+    RecipeList component text
+    </div>
+  );
+}
+  });
+
+var RecipeForm = React.createClass({
+render: function() {
+  return (
+    <div>
+      RecipeForm component text
+    </div>
+  );
+}
+  });
+
+      var RecipeBook = React.createClass({
+        render: function() {
+          return (
+            <div>
+              <RecipeBookPhoto />
+              Hello, world! I am a RecipeBook
+              <RecipeList />
+              <RecipeForm />
+            </div>
+          );
+        }
+      });
+
+      var RecipeBookPhoto = React.createClass({
+        render: function() {
+          return (
+            <div>
+              <img src="https://s-media-cache-ak0.pinimg.com/originals/74/b9/55/74b955513795417b28ec3e1a36c7ae0a.jpg" alt="recipe book photo" />
+            </div>
+          );
+        }
+        });
+
+      React.renderComponent(
+      <RecipeBook />, document.getElementById("app-container")
+      );
+    </script>
+  </body>
+</html>
